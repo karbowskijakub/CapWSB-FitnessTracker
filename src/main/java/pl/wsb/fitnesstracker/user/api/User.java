@@ -21,28 +21,26 @@ public class User {
     @Nullable
     private Long id;
 
-    @Column(name = "birthday", nullable = false)
-    private LocalDate birthday;
+    @Column
+    private String firstName;
+
+    @Column
+    private String lastName;
+
+    @Column(name = "birthdate", nullable = false)
+    private LocalDate birthdate;
 
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(name = "first_name",nullable = false, unique = true)
-    private String firstName;
-
-    @Column(name = "last_name",nullable = false, unique = true)
-    private String lastName;
-
     public User(
             final String firstName,
             final String lastName,
-            final LocalDate birthday,
+            final LocalDate birthdate,
             final String email) {
 
-        this.birthday = birthday;
+        this.birthdate = birthdate;
         this.email = email;
-        this.lastName = lastName;
-        this.firstName = firstName;
     }
 
 }
